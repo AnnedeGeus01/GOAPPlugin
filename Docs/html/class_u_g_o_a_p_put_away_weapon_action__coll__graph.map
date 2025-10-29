@@ -1,7 +1,0 @@
-<map id="UGOAPPutAwayWeaponAction" name="UGOAPPutAwayWeaponAction">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,411,222,501"/>
-<area shape="rect" id="Node000002" href="$class_u_g_o_a_p_action.html" title="Base class for all GOAP actions." alt="" coords="56,123,172,363"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,377,116,411,111,411,111,377"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="84,5,143,75"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,90,116,123,111,123,111,90"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="UGOAPGoal" name="UGOAPGoal">
-<area shape="rect" id="Node000001" title="Represents a GOAP Goal: a desired world state the agent aims to achieve." alt="" coords="33,168,148,280"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,16,64,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,99,75,167,70,169,48,100"/>
-<area shape="rect" id="Node000003" href="$struct_f_g_o_a_p_world_state.html" title="Represents a set of world state facts for the GOAP system." alt="" coords="88,5,208,96"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,97,117,153,112,151,131,95"/>
-</map>

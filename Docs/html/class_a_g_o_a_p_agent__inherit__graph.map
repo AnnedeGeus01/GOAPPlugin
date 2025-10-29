@@ -1,5 +1,0 @@
-<map id="AGOAPAgent" name="AGOAPAgent">
-<area shape="rect" id="Node000001" title="GOAP Agent responsible for managing goals, actions, and planning." alt="" coords="5,123,172,683"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="50,5,127,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,90,92,123,86,123,86,90"/>
-</map>

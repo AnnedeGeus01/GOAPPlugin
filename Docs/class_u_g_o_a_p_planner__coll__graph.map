@@ -1,0 +1,5 @@
+<map id="UGOAPPlanner" name="UGOAPPlanner">
+<area shape="rect" id="Node000001" title="GOAP planner that computes an action sequence to achieve a desired goal." alt="" coords="5,123,108,192"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="27,5,86,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,90,59,123,54,123,54,90"/>
+</map>

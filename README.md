@@ -16,13 +16,13 @@ This plugin brings a GOAP framework to Unreal Engine, designed to be:
 - Self-contained, there are no external dependencies beyond Unreal Engine.
 I created this plugin to add another way to control AI in unreal, which primarily uses Behaviour Trees due to its ease of use, but GOAP has a high flexibility and is best for complex and dynamic AI. I have also never worked with GOAP and wanted to learn more about different AI techniques and I think it is a valuable AI technique for portfolios.
 
-### How It Works:
+## How It Works:
 
 I will explain in sort what every aspect of the plugin does here, I also made documentation with Doxygen which also has class graphs, collaberation graphs, include graphs and included by graphs. I testes this plugin using Unreal's Third Person Template, and I made implementations of Actions and Goals with that in mind, some actions, lik patrolling, equip gun and kill enemy all have animations from the models from that template, if you want to use other animations you can swap them out or of course make your own implementations.
 And here is my full [GOAP Plugin Documentation](https://annedegeus01.github.io/GOAPPlugin/index.html). The Goal and Action examples are not documented there but they are included in the source files.
 
 ### World State
-Each agent has a UGOAPWorldStateComponent representing the current state of the world (e.g., “EnemyVisible = true”, “HasWeapon = false”). You can assign Agents states when you create them, but Agents can also receive new states as the program is running, they can get them from Action's effects.
+Each agent has a UGOAPWorldStateComponent representing the current state of the world (e.g., “EnemyVisible = true”, “HasWeapon = false”). You can assign Agents states when you create them, but Agents can also receive new states as the program is running, they can get them from Action's effects. The UGOAPWorldStateComponent holds an instance of FGOAPWorldState (Which is in GOAPTypes.h), and that contains the key facts about the environment the agent is aware of. The facts are stored in a TMap<FName, bool>.
 Here is tiny flow of what happens when a state changes:
 
 
@@ -44,3 +44,13 @@ A* is designed exactly for this kind of problem, a weighted graph where I want t
 Here is a diagram of how my plan function works:
 
 
+## How to use this plugin:
+- Add the plugin to your Unreal project.
+- Create an AGOAPAgent and attach a UGOAPWorldStateComponent.
+- Define UGOAPAction subclasses with preconditions and effects.
+- Define UGOAPGoal subclasses with desired world states and relevance.
+- Assign actions and goals to the agent.
+- Drop the agent in the level.
+- Thats it!
+
+The agent will have a World state component and options to add any States, Actions and Goals. From here you can also set the debug level, None, Minimal or Detailed. Set a reaction time, if you want any, this mostly helps with synchronized replanning. Here a visual of what the agent looks like in bluepints:

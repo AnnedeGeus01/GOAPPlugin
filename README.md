@@ -62,7 +62,7 @@ And Agent planning & execution flow:
 
 ## How to use this plugin:
 - Add the plugin to your Unreal project.
-- Create an AGOAPAgent and attach a UGOAPWorldStateComponent.
+- Create an AGOAPAgent.
 - Define UGOAPAction subclasses with preconditions and effects.
 - Define UGOAPGoal subclasses with desired world states and relevance.
 - Assign actions and goals to the agent.

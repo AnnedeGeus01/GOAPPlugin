@@ -24,13 +24,16 @@ And here is my full [GOAP Plugin Documentation](https://annedegeus01.github.io/G
 ### World State
 Each agent has a UGOAPWorldStateComponent representing the current state of the world (e.g., “EnemyVisible = true”, “HasWeapon = false”). You can assign Agents states when you create them, but Agents can also receive new states as the program is running, they can get them from Action's effects. The UGOAPWorldStateComponent holds an instance of FGOAPWorldState (Which is in GOAPTypes.h), and that contains the key facts about the environment the agent is aware of. The facts are stored in a TMap<FName, bool>.
 Here is tiny flow of what happens when a state changes:
+
 ![World State Diagram](docs/WorldState.drawio.png)
 
 ### Actions
 Actions define preconditions and effects:
 - Preconditions: conditions that must be true to perform the action.
 - Effects: changes to the world after the action executes.
+
 ![Actions Diagram](docs/Actions.drawio.png)
+
 
 ### Goals
 Goals define a desired world state that the agent wants to achieve. Each goal has a priority to influence planning, and a relevance to check if the goal should be considered, KillEnemy might have the highest priority but if there is no enemy it should not be selected. The plugin has dynamic goal selection based on this priority and relevance.
@@ -43,9 +46,18 @@ It uses a simple A* search over the state space, it works really well with GOAP�
 A* is designed exactly for this kind of problem, a weighted graph where I want the least-cost path from one node, which will be the current state to another, which is the goal state.
 Here is a diagram of how my plan function works:
 
+![Planner Diagram](docs/GOAPPlanner.drawio.png)
+
 
 ### Agent
 The AGOAPAgent class is the core of the GOAP system. It is responsible for managing the agent's current state, goals, actions, and interactions with the environment. It acts as the bridge between the world state, the planner, and the agent’s behavior in the game world.
+Here is a behavior / sequence flow for the Agent:
+
+![Agent Behavior](docs/AgentBehaviorFlow.drawio.png)
+
+And Agent planning & execution flow:
+
+![Agent Planning](docs/AgentPlanningFlow.drawio.png)
 
 
 ## How to use this plugin:
@@ -58,3 +70,5 @@ The AGOAPAgent class is the core of the GOAP system. It is responsible for manag
 - Thats it!
 
 The agent will have a World state component and options to add any States, Actions and Goals. From here you can also set the debug level, None, Minimal or Detailed. Set a reaction time, if you want any, this mostly helps with synchronized replanning. Here a visual of what the agent looks like in bluepints:
+
+![Agent Blueprint](docs/AgentBlueprint.png)
